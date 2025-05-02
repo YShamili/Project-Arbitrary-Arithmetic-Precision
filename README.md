@@ -18,13 +18,16 @@ This Java library supports arbitrary-precision arithmetic operations for integer
 
 *The above will generate the .jar files in the build/ folder  
   
--Using the jar to run the code:   java -jar build/arbitraryarithmetic.jar int add 123456789 987654321  
+#### Using the JAR to run the code:  
+java -jar build/arbitraryarithmetic.jar int add 123456789 987654321
+    
+#### Using the classes :  
+java -cp build arbitraryarithmetic.MyInfArith int div 25 125  
   
--Using the classes : java -cp build arbitraryarithmetic.MyInfArith int div 25 125  
+#### Using the python compiler which compiles the java codes:  
+python3 run_project.py int add 123 456  
   
--Using the python compiler which compiles the java codes:   python3 run_project.py int add 123 456  
-  
-###Syntax:  
+### Syntax:  
 java -jar build/arbitraryarithmetic.jar [type] [operation] [num1] [num2]   
 (The above when we use the .jar files in the buld folder)  
   
