@@ -4,9 +4,7 @@ import os#to interact with the operating system
 def build_project():#function to build the project using ant
     result = os.system("ant build")#using the os.system() to run the ant build command in the shll
 
-    if result == 0:
-        print("build successful")
-    else:
+    if result != 0:
         print("build failed")
         sys.exit(1)#exiting with 1 indicating that it failed
 
@@ -14,9 +12,7 @@ def run_java(arg):#for running the java code
     command = f"java -cp build arbitraryarithmetic.MyInfArith {' '.join(arg)}"
     res = os.system(command)
 
-    if res ==0:
-        print("program ran succefully")
-    else:
+    if res != 0:
         print("ERROR")
         sys.exit(1)
 
