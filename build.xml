@@ -1,24 +1,26 @@
 <project name="ArbitraryArithmetic" default="run" basedir=".">
+    
+    <!-- define source, build directories, JAR file location -->
     <property name="src" value="src"/>
     <property name="build" value="build"/>
     <property name="jar.file" value="build/arbitraryarithmetic.jar"/>
 
-    <!-- clean target -->
+    <!-- deletes the build directory to start fresh -->
     <target name="clean">
         <delete dir="${build}"/>
     </target>
 
-    <!-- compile target -->
-    <target name="compile" depends="clean,init">
-        <javac srcdir="${src}" destdir="${build}"/>
-    </target>
-
-    <!-- initializes the build directory -->
+    <!--creates the build directory -->
     <target name="init">
         <mkdir dir="${build}"/>
     </target>
 
-    <!-- jar target -->
+    <!--depends on clean and init, compiles Java files -->
+    <target name="compile" depends="clean,init">
+        <javac srcdir="${src}" destdir="${build}"/>
+    </target>
+
+    <!--creates jar files with the compiled.class files -->
     <target name="jar" depends="compile">
         <jar destfile="${jar.file}" basedir="${build}">
             <manifest>
@@ -27,12 +29,12 @@
         </jar>
     </target>
 
-    <!-- build target (depends on cleaning and compiling) -->
+    <!--runs both clean and compile -->
     <target name="build" depends="clean, compile">
         <!-- Clean and compile the project -->
     </target>
 
-    <!-- runs target -->
+    <!--runs with a sample argument-->
     <target name="run" depends="jar">
         <java jar="${jar.file}" fork="true">
             <arg value="int"/>
@@ -41,4 +43,5 @@
             <arg value="456"/>
         </java>
     </target>
+
 </project>
