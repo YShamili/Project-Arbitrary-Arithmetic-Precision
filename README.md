@@ -19,7 +19,9 @@ This Java library supports arbitrary-precision arithmetic operations for integer
 *The above will generate the .jar files in the build/ folder  
   
 #### Using the JAR to run the code:  
+```bash
 java -jar build/arbitraryarithmetic.jar int add 123456789 987654321
+```
     
 ### Using the classes:
 ```bash
