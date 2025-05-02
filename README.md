@@ -1,18 +1,22 @@
-#Arbitrary precision Arithmetic Library:  
-This java library supports arbitrary-precision arithmetic operations for integers and floating point numbers.  
-  
-###Features:  
--Addition, Subtraction, Multiplication, Division  
--Supports large numbers beyond default Java types  
-  
-###What is the uses:  
--The operations can be done for the very large numbers beyond the limits of standard data types like int and float  
--Even the sign of the respective numbers are also considered according to the logic .  
--The large numbers ooperations are done in the form of strings  
-  
-###How to build:  
--Use the ant command to build the project which is: ant jar  
-The above will generate the .jar files in the build/ folder  
+# Arbitrary Precision Arithmetic Library
+
+This Java library supports arbitrary-precision arithmetic operations for integers and floating-point numbers.
+
+### Features:
+- Addition, Subtraction, Multiplication, Division
+- Supports large numbers beyond the default Java types
+
+### Uses:
+- Operations can be done for very large numbers beyond the limits of standard data types like `int` and `float`.
+- The signs of the respective numbers are considered according to the logic.
+- Large number operations are handled using strings.
+
+### How to build:
+- Use the following Ant command to build the project:
+  ```bash
+  ant jar
+
+*The above will generate the .jar files in the build/ folder  
   
 -Using the jar to run the code:   java -jar build/arbitraryarithmetic.jar int add 123456789 987654321  
   
