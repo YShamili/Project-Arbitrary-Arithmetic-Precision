@@ -317,6 +317,10 @@ public class AFloat {
         String decpart = final_res.substring(final_res.length() - total_dec_places);
 
         final_res = intpart + "." + decpart;
+        final_res = final_res.replaceAll("0+$", "");
+        if(final_res.endsWith(".")){
+            final_res += "0";
+        }
         //this is the final addition result in the form of decimal points also
 
         boolean isit_negative;
@@ -379,6 +383,7 @@ public class AFloat {
                 r++;
             }
             quotient.append(r);
+            current = currentAFloat.value.split("\\.")[0];
         }
         String quotientStr = quotient.toString();
         while(quotientStr.length() <= total_dec_places){
@@ -386,6 +391,12 @@ public class AFloat {
         }
         String int_part = quotientStr.substring(0, quotientStr.length() - total_dec_places);
         String dec_part = quotientStr.substring(quotientStr.length() - total_dec_places);
+
+        int_part = removeleadingzeros(int_part);
+        if (int_part.isEmpty()){
+            int_part = "0";
+        }
+
         String final_res = int_part + "." + dec_part;
 
         final_res = final_res.replaceAll("\\.?0+$", "");
